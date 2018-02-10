@@ -1,6 +1,8 @@
 package com.bbs.feng.video.dao;
 
 import com.bbs.feng.coom.dao.BbsDao;
+import com.bbs.feng.video.entity.VideoEntity;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Marco.Feng
@@ -9,5 +11,7 @@ import com.bbs.feng.coom.dao.BbsDao;
  * @date 2018/02/10 13:57
  * @since JDK 1.8
  */
-public interface VideoDao extends BbsDao {
+@Component
+public interface VideoDao extends BbsDao<VideoEntity,Long> {
+
 }
