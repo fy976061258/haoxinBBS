@@ -24,7 +24,15 @@ public class VideoController {
     @Autowired
     private VideoDao videoDao;
 
-
+    /**
+      *    获取所有视频
+      *
+      * @author Marce.Feng
+      * @date 2018/02/10 20:57
+      * @throws
+      * @param null
+      * @return
+      */
     @GetMapping(path = "/find/all/video")
     public ResultModel findAllVideo(@RequestParam Integer page,
                                     @RequestParam Integer limit){
