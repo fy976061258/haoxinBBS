@@ -23,16 +23,16 @@ public class VideoController {
 
     @GetMapping(path = "/find/all")
     @ResponseBody
-    public ResultModel findAllVideo(@RequestParam Integer page,
+    public Object findAllVideo(@RequestParam Integer page,
                                     @RequestParam Integer limit){
-        ResultModel resultModel =  videoService.findAllVideo(page,limit);
-        return resultModel;
+        Object body =  videoService.findAllVideo(page,limit);
+        return body;
     }
 
     @PostMapping(path = "/save")
     @ResponseBody
-    public ResultModel saveVideo(@RequestBody VideoEntity videoEntity){
-        ResultModel resultModel =  videoService.saveVideo(videoEntity);
-        return resultModel;
+    public Object saveVideo(@RequestBody VideoEntity videoEntity){
+        Object body =  videoService.saveVideo(videoEntity);
+        return body;
     }
 }
