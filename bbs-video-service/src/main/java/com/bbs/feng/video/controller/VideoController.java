@@ -3,6 +3,7 @@ package com.bbs.feng.video.controller;
 import com.bbs.feng.coom.result.ResultModel;
 import com.bbs.feng.video.dao.VideoDao;
 import com.bbs.feng.video.entity.VideoEntity;
+import com.bbs.feng.video.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ import java.util.List;
 @RequestMapping (value = "/video")
 public class VideoController {
     @Autowired
-    private VideoDao videoDao;
+    private VideoService videoService;
 
     /**
       *    获取所有视频
@@ -36,7 +37,7 @@ public class VideoController {
     @GetMapping(path = "/find/all/video")
     public ResultModel findAllVideo(@RequestParam Integer page,
                                     @RequestParam Integer limit){
-        List<VideoEntity> videoEntities = videoDao.findAll();
+        List<VideoEntity> videoEntities = videoService.findAllVideo();
         return ResultModel.ok(videoEntities,Long.valueOf(videoEntities.size()));
     }
 

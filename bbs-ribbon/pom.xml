@@ -54,7 +54,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.bbs.feng</groupId>
+            <artifactId>coom</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 	<dependencyManagement>
 		<dependencies>
