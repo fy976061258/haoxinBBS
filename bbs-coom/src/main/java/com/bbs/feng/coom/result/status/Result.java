@@ -9,7 +9,8 @@ package com.bbs.feng.coom.result.status;
  * @since JDK 1.8
  */
 public enum Result {
-    SUCCESS(200,"成功");
+    SUCCESS(200,"成功"),
+    ERROR(500,"服务器暂时无法响应，青稍后再试");
 
 
     private Integer code;

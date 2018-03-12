@@ -6,10 +6,7 @@ import com.bbs.feng.video.entity.VideoEntity;
 import com.bbs.feng.video.service.VideoService;
 import org.mongodb.morphia.query.QueryResults;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,10 +33,12 @@ public class VideoController {
       * @return
       */
     @GetMapping(path = "/find/all/video")
+    @ResponseBody
     public ResultModel findAllVideo(@RequestParam Integer page,
                                     @RequestParam Integer limit){
         List<VideoEntity> videoEntities = videoService.findAllVideo();
-        return ResultModel.ok(videoEntities,Long.valueOf(videoEntities.size()));
+        Long count = Long.valueOf(videoEntities.size());
+        return ResultModel.ok(videoEntities,count);
     }
 
 }

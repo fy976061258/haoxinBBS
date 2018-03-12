@@ -29,13 +29,13 @@ public class VideoService {
      *    hystrix fallback方法
      *
      * @author Marce.Feng
-     * @date 2018/02/04 18:59
+     * @date 2018/03/12 12:59
      * @throws
      * @param null
      * @return
      */
-    public String testServiceFallback(Integer page,Integer limit) {
-        return "服务器发生异常";
+    public ResultModel testServiceFallback(Integer page,Integer limit) {
+        return ResultModel.error();
     }
 
 
