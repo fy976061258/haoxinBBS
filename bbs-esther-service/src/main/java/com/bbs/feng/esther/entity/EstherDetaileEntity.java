@@ -25,6 +25,10 @@ public class EstherDetaileEntity {
 
     private String detail;
 
+    private String url;
+
+    private String password;
+
     private List<EstherImgEntity> estherImgEntities;
 
     private List<EstherCommentsEntity> estherCommentsEntities;
