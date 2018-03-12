@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since JDK 1.8
  */
 @Data
-@Entity("employees")
+@Entity("Video")
 @Document(collection = "Video")
 @EnableMongoAuditing
 public class VideoEntity extends EntityModel {
