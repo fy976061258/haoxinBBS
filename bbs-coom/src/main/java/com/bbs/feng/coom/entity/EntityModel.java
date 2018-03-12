@@ -19,7 +19,7 @@ import java.util.Date;
 public class EntityModel implements Serializable {
 
     @Id
-    private Long id;
+    private String id;
 
     private Date creatDate = new Date();
 

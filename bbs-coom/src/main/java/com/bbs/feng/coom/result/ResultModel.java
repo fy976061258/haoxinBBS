@@ -67,8 +67,19 @@ public class ResultModel {
         this.count = null;
     }
 
+    public ResultModel(Object body , Integer status , String massage){
+        this.status = status;
+        this.body = body;
+        this.massage = massage;
+        this.count = 0L;
+    }
+
     public static ResultModel ok(Object body,Long count){
         return new ResultModel(body, Result.SUCCESS.getCode(),Result.SUCCESS.getMsg(),count);
+    }
+
+    public static ResultModel ok(Object body){
+        return new ResultModel(body, Result.SUCCESS.getCode(),Result.SUCCESS.getMsg());
     }
 
     public static ResultModel error(){

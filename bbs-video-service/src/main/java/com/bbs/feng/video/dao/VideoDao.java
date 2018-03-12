@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @since JDK 1.8
  */
 @Component
-public class VideoDao extends BbsDao<VideoEntity,Long> {
+public class VideoDao extends BbsDao<VideoEntity,String> {
     @Autowired
     public VideoDao(Datastore datastore) {
         super(datastore);

@@ -1,6 +1,7 @@
 package com.bbs.feng.ribbon.service;
 
 import com.bbs.feng.coom.result.ResultModel;
+import com.bbs.feng.video.entity.VideoEntity;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,15 @@ public class VideoService {
     private RestTemplate restTemplate;
 
 
-    @HystrixCommand(fallbackMethod = "testServiceFallback")
+    @HystrixCommand(fallbackMethod = "findAllVideoFallback")
     public ResultModel findAllVideo(Integer page,Integer limit) {
-        return restTemplate.getForEntity("http://bbs-video-server/video/find/all/video?page="+page+"&limit="+limit,
+        return restTemplate.getForEntity("http://bbs-video-server/video/find/all?page="+page+"&limit="+limit,
+                ResultModel.class).getBody();
+    }
+
+    @HystrixCommand(fallbackMethod = "saveVideoFallback")
+    public ResultModel saveVideo(VideoEntity videoEntity) {
+        return restTemplate.postForEntity("http://bbs-video-server/video/save",videoEntity,
                 ResultModel.class).getBody();
     }
 
@@ -34,7 +41,11 @@ public class VideoService {
      * @param null
      * @return
      */
-    public ResultModel testServiceFallback(Integer page,Integer limit) {
+    public ResultModel findAllVideoFallback(Integer page,Integer limit) {
+        return ResultModel.error();
+    }
+
+    public ResultModel saveVideoFallback(VideoEntity videoEntity) {
         return ResultModel.error();
     }
 
