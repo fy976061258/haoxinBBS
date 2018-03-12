@@ -29,10 +29,12 @@ public class MorphiaFactory {
     @Autowired
     MongoProperties mongoProperties;
 
-    @Bean
-    public Datastore get() {
+    @Bean(name = "getMongoDB")
+    public Datastore getMongoDB() {
         Morphia morphia = new Morphia();
         return morphia.createDatastore((MongoClient) mongo,mongoProperties.getDatabase());
     }
 
 }
+
+
