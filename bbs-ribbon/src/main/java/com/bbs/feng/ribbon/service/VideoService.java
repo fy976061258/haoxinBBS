@@ -34,7 +34,7 @@ public class VideoService {
      * @param null
      * @return
      */
-    public String testServiceFallback() {
+    public String testServiceFallback(Integer page,Integer limit) {
         return "服务器发生异常";
     }
 

@@ -2,7 +2,7 @@ package com.bbs.feng.coom.entity;
 
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import org.mongodb.morphia.annotations.Id;
 
 import java.io.Serializable;
 import java.util.Date;

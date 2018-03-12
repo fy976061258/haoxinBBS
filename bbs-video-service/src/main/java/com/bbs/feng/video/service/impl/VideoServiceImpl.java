@@ -4,6 +4,7 @@ import com.bbs.feng.video.dao.VideoDao;
 import com.bbs.feng.video.entity.VideoEntity;
 import com.bbs.feng.video.service.VideoService;
 import com.netflix.discovery.converters.Auto;
+import org.mongodb.morphia.query.QueryResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,8 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public List<VideoEntity> findAllVideo() {
-        List<VideoEntity> videoEntity = videoDao.findAll();
-        return videoEntity;
+        QueryResults<VideoEntity> videoEntity = videoDao.find();
+        List<VideoEntity>  videoEntities = videoEntity.asList();
+        return videoEntities;
     }
 }

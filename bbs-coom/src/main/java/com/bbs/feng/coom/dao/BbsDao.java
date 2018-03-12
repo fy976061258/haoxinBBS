@@ -1,10 +1,10 @@
 package com.bbs.feng.coom.dao;
 
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.NoRepositoryBean;
+import org.mongodb.morphia.Datastore;
+import org.mongodb.morphia.dao.BasicDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 import java.io.Serializable;
 
 
@@ -16,6 +16,10 @@ import java.io.Serializable;
  * @since JDK 1.8
  */
 
-public interface BbsDao<T,K extends Serializable> extends MongoRepository<T,K> {
+public class BbsDao<T,K extends Serializable> extends BasicDAO<T,K> {
+    @Autowired
+    public BbsDao(Datastore datastore) {
+        super(datastore);
+    }
 
 }

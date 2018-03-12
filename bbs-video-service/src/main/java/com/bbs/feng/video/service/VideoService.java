@@ -2,6 +2,7 @@ package com.bbs.feng.video.service;
 
 import com.bbs.feng.coom.service.BbsService;
 import com.bbs.feng.video.entity.VideoEntity;
+import org.mongodb.morphia.query.QueryResults;
 
 import java.util.List;
 
