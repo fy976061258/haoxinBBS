@@ -41,8 +41,7 @@ public class VideoController {
     public ResultModel findAllVideo(@RequestParam Integer page,
                                     @RequestParam Integer size){
         Page<VideoEntity> videoEntities = videoService.findAllVideo(page,size);
-        Long count = Long.valueOf(videoEntities.getTotalElements());
-        return ResultModel.ok(videoEntities,count);
+        return ResultModel.ok(videoEntities);
     }
 
 

@@ -17,8 +17,6 @@ public class ResultModel {
 
     private String massage;
 
-    private Long count;
-
     private Object body;
 
     public Integer getStatus() {
@@ -37,14 +35,6 @@ public class ResultModel {
         this.massage = massage;
     }
 
-    public Long getCount() {
-        return count;
-    }
-
-    public void setCount(Long count) {
-        this.count = count;
-    }
-
     public Object getBody() {
         return body;
     }
@@ -57,21 +47,18 @@ public class ResultModel {
         this.status = status;
         this.body = body;
         this.massage = massage;
-        this.count = count;
     }
 
     public ResultModel(Integer status,String massage){
         this.status = status;
         this.body = null;
         this.massage = massage;
-        this.count = null;
     }
 
     public ResultModel(Object body , Integer status , String massage){
         this.status = status;
         this.body = body;
         this.massage = massage;
-        this.count = 0L;
     }
 
     public static ResultModel ok(Object body,Long count){
