@@ -3,7 +3,9 @@ package com.bbs.feng.video.service;
 import com.bbs.feng.coom.service.BbsService;
 import com.bbs.feng.video.entity.VideoEntity;
 import org.mongodb.morphia.Key;
+import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.QueryResults;
+import org.springframework.data.domain.Page;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +30,7 @@ public interface VideoService extends BbsService{
      * @param null
      * @return
      */
-    List<VideoEntity> findAllVideo();
+    Page<VideoEntity> findAllVideo(Integer page,Integer size);
 
 
     /**
@@ -40,7 +42,7 @@ public interface VideoService extends BbsService{
      * @param null
      * @return
      */
-    Key<VideoEntity> saveVideo(VideoEntity videoEntity);
+    VideoEntity saveVideo(VideoEntity videoEntity);
 
     /**
      *    视频上传

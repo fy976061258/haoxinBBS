@@ -4,6 +4,8 @@ import com.bbs.feng.coom.dao.BbsDao;
 import com.bbs.feng.video.entity.VideoEntity;
 import org.mongodb.morphia.Datastore;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -15,11 +17,7 @@ import org.springframework.stereotype.Repository;
  * @since JDK 1.8
  */
 @Component
-public class VideoDao extends BbsDao<VideoEntity,String> {
-    @Autowired
-    public VideoDao(Datastore datastore) {
-        super(datastore);
-    }
+public interface VideoDao extends BbsDao<VideoEntity,String> {
 
 
 }

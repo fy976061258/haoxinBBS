@@ -5,8 +5,10 @@ import com.bbs.feng.video.dao.VideoDao;
 import com.bbs.feng.video.entity.VideoEntity;
 import com.bbs.feng.video.service.VideoService;
 import org.mongodb.morphia.Key;
+import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.QueryResults;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.POST;
@@ -37,9 +39,9 @@ public class VideoController {
     @GetMapping(path = "/find/all")
     @ResponseBody
     public ResultModel findAllVideo(@RequestParam Integer page,
-                                    @RequestParam Integer limit){
-        List<VideoEntity> videoEntities = videoService.findAllVideo();
-        Long count = Long.valueOf(videoEntities.size());
+                                    @RequestParam Integer size){
+        Page<VideoEntity> videoEntities = videoService.findAllVideo(page,size);
+        Long count = Long.valueOf(videoEntities.getTotalElements());
         return ResultModel.ok(videoEntities,count);
     }
 
@@ -56,7 +58,7 @@ public class VideoController {
     @PostMapping(path = "/save")
     @ResponseBody
     public ResultModel saveVideo(@RequestBody VideoEntity videoEntity){
-        Key<VideoEntity> videoEntities = videoService.saveVideo(videoEntity);
+        VideoEntity videoEntities = videoService.saveVideo(videoEntity);
         return ResultModel.ok(videoEntities);
     }
 

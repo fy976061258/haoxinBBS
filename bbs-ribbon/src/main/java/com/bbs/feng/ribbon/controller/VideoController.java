@@ -24,8 +24,8 @@ public class VideoController {
     @GetMapping(path = "/find/all")
     @ResponseBody
     public Object findAllVideo(@RequestParam Integer page,
-                                    @RequestParam Integer limit){
-        Object body =  videoService.findAllVideo(page,limit);
+                                    @RequestParam Integer size){
+        Object body =  videoService.findAllVideo(page,size);
         return body;
     }
 

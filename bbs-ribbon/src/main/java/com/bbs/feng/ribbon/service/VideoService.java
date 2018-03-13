@@ -21,8 +21,8 @@ public class VideoService {
 
 
     @HystrixCommand(fallbackMethod = "findAllVideoFallback")
-    public Object findAllVideo(Integer page,Integer limit) {
-        Object body = restTemplate.getForEntity("http://bbs-video-server/video/find/all?page="+page+"&limit="+limit,
+    public Object findAllVideo(Integer page,Integer size) {
+        Object body = restTemplate.getForEntity("http://bbs-video-server/video/find/all?page="+page+"&size="+size,
                 Object.class).getBody();
         return body;
     }
