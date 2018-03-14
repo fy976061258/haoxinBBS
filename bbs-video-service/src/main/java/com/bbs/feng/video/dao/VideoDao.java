@@ -19,5 +19,4 @@ import org.springframework.stereotype.Repository;
 @Component
 public interface VideoDao extends BbsDao<VideoEntity,String> {
 
-
 }

@@ -9,6 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
 /**
+ *
+ *  详情
+ *
  * @author Marco.Feng
  * @title: haoxinBBS
  * @description:
@@ -20,8 +23,6 @@ import java.util.List;
 @Document(collection = "EstherDetaile")
 @EnableMongoAuditing
 public class EstherDetaileEntity {
-
-    private String title;
 
     private String detail;
 

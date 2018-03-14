@@ -1,6 +1,9 @@
 package com.bbs.feng.esther.entity;
 
 /**
+ *
+ *  评论
+ *
  * @author Marco.Feng
  * @title: haoxinBBS
  * @description:
