@@ -72,11 +72,7 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.16</version>
 		</dependency>
-        <dependency>
-            <groupId>com.bbs.feng</groupId>
-            <artifactId>esther</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
 	<dependencyManagement>
