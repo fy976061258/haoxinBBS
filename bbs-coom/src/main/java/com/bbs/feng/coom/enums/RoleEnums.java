@@ -11,7 +11,9 @@ public enum RoleEnums {
     ZCHY(0,"注册会员",10L),
     HJHY(1,"黄金会员",30L),
     BJHY(2,"白金会员",50L),
-    ZSHY(3,"钻石会员",100L);
+    ZSHY(3,"钻石会员",100L),
+    BKGLY(4,"板块管理员",0L),
+    GLY(5,"全局管理员",10000L);
 
     private Integer code;
     private String name;

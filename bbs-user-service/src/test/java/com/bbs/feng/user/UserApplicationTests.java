@@ -1,15 +1,18 @@
 package com.bbs.feng.user;
 
 import com.bbs.feng.coom.enums.RoleEnums;
+import com.bbs.feng.user.entity.ActivationCodeEntity;
 import com.bbs.feng.user.entity.PermissionEntity;
 import com.bbs.feng.user.entity.RoleEntity;
 import com.bbs.feng.user.entity.UserEntity;
+import com.bbs.feng.user.service.ActivationCodeService;
 import com.bbs.feng.user.service.RoleService;
 import com.bbs.feng.user.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -22,6 +25,8 @@ public class UserApplicationTests {
 	private UserService userService;
 	@Autowired
 	private RoleService roleService;
+	@Autowired
+    private ActivationCodeService activationCodeService;
 
 	@Test
 	public void contextLoads() {
@@ -52,5 +57,17 @@ public class UserApplicationTests {
 		UserEntity userEntity = userService.findOneUserByAccount("admin");
 		System.out.print(userEntity);
 	}
+
+    @Test
+    public void aa(){
+        activationCodeService.generateActivationCode();
+    }
+
+    @Test
+    public void ab(){
+        Page<ActivationCodeEntity> activationCodeEntities = activationCodeService.findAllActivationCode(0,400);
+        List<ActivationCodeEntity> activationCodeEntities1 = activationCodeEntities.getContent();
+        System.out.print(activationCodeEntities);
+    }
 
 }
