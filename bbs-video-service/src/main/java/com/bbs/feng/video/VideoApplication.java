@@ -10,9 +10,9 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @EnableFeignClients
 @SpringBootApplication
-public class DemoApplication {
+public class VideoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(VideoApplication.class, args);
 	}
 }

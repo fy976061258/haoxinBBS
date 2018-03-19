@@ -72,8 +72,8 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.bbs.feng.video</groupId>
-            <artifactId>demo</artifactId>
+            <groupId>com.bbs.feng</groupId>
+            <artifactId>video</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 	</dependencies>
