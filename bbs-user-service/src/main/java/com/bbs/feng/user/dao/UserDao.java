@@ -10,7 +10,7 @@ import com.bbs.feng.user.entity.UserEntity;
  * @date 2018/03/19 15:38
  * @since JDK 1.8
  */
-public interface UserDao extends BbsDao<UserEntity,Long> {
+public interface UserDao extends BbsDao<UserEntity,String> {
 
     UserEntity findUserEntityByAccount(String account);
 

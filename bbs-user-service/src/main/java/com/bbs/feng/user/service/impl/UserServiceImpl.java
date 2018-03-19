@@ -6,6 +6,7 @@ import com.bbs.feng.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Marco.Feng
@@ -14,6 +15,7 @@ import org.springframework.data.domain.PageRequest;
  * @date 2018/03/19 15:36
  * @since JDK 1.8
  */
+@Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;

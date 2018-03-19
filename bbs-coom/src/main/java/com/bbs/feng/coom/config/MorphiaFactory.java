@@ -1,4 +1,4 @@
-package com.bbs.feng.user.config;
+package com.bbs.feng.coom.config;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
