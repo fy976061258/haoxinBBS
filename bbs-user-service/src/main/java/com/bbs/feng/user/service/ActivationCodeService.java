@@ -24,6 +24,7 @@ public interface ActivationCodeService extends BbsService {
      * @return
      */
     void generateActivationCode();
+
     /**
      *    查询所有的激活码
      *
@@ -34,4 +35,15 @@ public interface ActivationCodeService extends BbsService {
      * @return
      */
     Page<ActivationCodeEntity> findAllActivationCode(Integer page,Integer size);
+
+    /**
+     *    判断激活码是否正确
+     *
+     * @author Marce.Feng
+     * @date 2018/03/20 13:37
+     * @throws
+     * @param activationCode 激活码
+     * @return
+     */
+    Integer is_true(String activationCode);
 }

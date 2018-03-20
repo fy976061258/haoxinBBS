@@ -56,4 +56,16 @@ public class ActivationCodeServiceImpl implements ActivationCodeService {
         Page<ActivationCodeEntity> ActivationCodes = activationCodeDao.findAll(pageRequest);
         return ActivationCodes;
     }
+
+    @Override
+    public Integer is_true(String activationCode) {
+        ActivationCodeEntity activationCodeEntity = activationCodeDao.findActivationCodeEntityByNumber(activationCode);
+        if (activationCodeEntity != null || activationCodeEntity.getNumber()!=null){
+            if (activationCodeEntity.getIs_use()){
+                return 1;
+            }
+            return 0;
+        }
+        return null;
+    }
 }

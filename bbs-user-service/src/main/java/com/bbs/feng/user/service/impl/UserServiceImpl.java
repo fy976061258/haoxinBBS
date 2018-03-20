@@ -2,6 +2,7 @@ package com.bbs.feng.user.service.impl;
 
 import com.bbs.feng.user.dao.UserDao;
 import com.bbs.feng.user.entity.UserEntity;
+import com.bbs.feng.user.service.ActivationCodeService;
 import com.bbs.feng.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,11 +20,18 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private ActivationCodeService activationCodeService;
 
     @Override
-    public UserEntity saveUser(UserEntity userEntity) {
-        UserEntity user = userDao.save(userEntity);
-        return user;
+    public UserEntity saveUser(UserEntity userEntity,String activationCode) {
+        Integer type = activationCodeService.is_true(activationCode);
+        if (type == 0){
+            UserEntity user = userDao.save(userEntity);
+            return user;
+        }else {
+            return null;
+        }
     }
 
     @Override

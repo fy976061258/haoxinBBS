@@ -22,7 +22,7 @@ public interface UserService extends BbsService {
      * @param userEntity 用户信息
      * @return
      */
-    UserEntity saveUser(UserEntity userEntity);
+    UserEntity saveUser(UserEntity userEntity,String activationCode);
 
     /**
      *    查询所有用户

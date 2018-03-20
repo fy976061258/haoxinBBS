@@ -65,7 +65,7 @@ public class UserApplicationTests {
 
     @Test
     public void ab(){
-        Page<ActivationCodeEntity> activationCodeEntities = activationCodeService.findAllActivationCode(0,400);
+        Page<ActivationCodeEntity> activationCodeEntities = activationCodeService.findAllActivationCode(0,20);
         List<ActivationCodeEntity> activationCodeEntities1 = activationCodeEntities.getContent();
         System.out.print(activationCodeEntities);
     }

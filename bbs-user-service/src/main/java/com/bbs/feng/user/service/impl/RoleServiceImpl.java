@@ -6,6 +6,8 @@ import com.bbs.feng.user.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Marco.Feng
  * @title: haoxinBBS
@@ -21,5 +23,11 @@ public class RoleServiceImpl implements RoleService {
     public RoleEntity saveRole(RoleEntity roleEntity) {
         RoleEntity roleEntity1 = roleDao.save(roleEntity);
         return roleEntity1;
+    }
+
+    @Override
+    public List<RoleEntity> findAll() {
+        List<RoleEntity> roles = roleDao.findAll();
+        return roles;
     }
 }

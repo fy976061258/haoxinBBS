@@ -12,5 +12,5 @@ import com.bbs.feng.user.entity.ActivationCodeEntity;
  */
 public interface ActivationCodeDao extends BbsDao<ActivationCodeEntity,String> {
 
-
+    ActivationCodeEntity findActivationCodeEntityByNumber(String activationCode);
 }
