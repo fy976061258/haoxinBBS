@@ -10,6 +10,7 @@
 
     <modules>
         <module>bbs-user-service</module>
+        <module>bbs-zuul-service</module>
         <module>bbs-video-service</module>
         <module>bbs-eureka</module>
         <module>bbs-ribbon</module>
