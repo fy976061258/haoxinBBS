@@ -24,7 +24,7 @@ public class UserController {
     private UserService userService;
 
 
-    @PostMapping("save")
+    @PostMapping("/save")
     @ResponseBody
     public Object saveVideo(@RequestBody UserEntity userEntity){
         Object body =  userService.saveUser(userEntity);

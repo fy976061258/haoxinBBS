@@ -1,7 +1,7 @@
 package com.feng.zuul.config.springsecurity;
 
 import com.bbs.feng.user.entity.UserEntity;
-import com.bbs.feng.user.service.UserService;
+import com.feng.zuul.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 
 /**
  * @author Marco.Feng
