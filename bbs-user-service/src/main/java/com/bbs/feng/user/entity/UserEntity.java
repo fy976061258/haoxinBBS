@@ -31,6 +31,8 @@ public class UserEntity extends EntityModel {
 
     private String phoneNumber;
 
+    private String activationCode;
+
     private RoleEntity roles;
 
 

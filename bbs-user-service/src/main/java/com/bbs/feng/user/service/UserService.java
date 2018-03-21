@@ -22,7 +22,7 @@ public interface UserService extends BbsService {
      * @param userEntity 用户信息
      * @return
      */
-    UserEntity saveUser(UserEntity userEntity,String activationCode);
+    UserEntity saveUser(UserEntity userEntity);
 
     /**
      *    查询所有用户
@@ -46,4 +46,7 @@ public interface UserService extends BbsService {
      * @return
      */
     UserEntity findOneUserByAccount(String account);
+
+
+    Boolean isUserExist(UserEntity userEntity);
 }

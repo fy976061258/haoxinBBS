@@ -1,5 +1,6 @@
 package com.bbs.feng.user.service.impl;
 
+import com.bbs.feng.coom.util.MD5Util;
 import com.bbs.feng.user.dao.UserDao;
 import com.bbs.feng.user.entity.UserEntity;
 import com.bbs.feng.user.service.ActivationCodeService;
@@ -24,9 +25,11 @@ public class UserServiceImpl implements UserService {
     private ActivationCodeService activationCodeService;
 
     @Override
-    public UserEntity saveUser(UserEntity userEntity,String activationCode) {
-        Integer type = activationCodeService.is_true(activationCode);
+    public UserEntity saveUser(UserEntity userEntity) {
+        Integer type = activationCodeService.is_true(userEntity.getActivationCode());
         if (type == 0){
+            String password = MD5Util.encode(userEntity.getPassword());
+            userEntity.setPassword(password);
             UserEntity user = userDao.save(userEntity);
             return user;
         }else {
@@ -45,5 +48,10 @@ public class UserServiceImpl implements UserService {
     public UserEntity findOneUserByAccount(String account) {
         UserEntity user = userDao.findUserEntityByAccount(account);
         return user;
+    }
+
+    @Override
+    public Boolean isUserExist(UserEntity userEntity) {
+        return null;
     }
 }
