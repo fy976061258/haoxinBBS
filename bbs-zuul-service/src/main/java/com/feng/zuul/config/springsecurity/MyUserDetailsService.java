@@ -24,15 +24,15 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = userService.findOneUserByAccount(username);
-
         if(user  == null){
             throw new UsernameNotFoundException("用户名："+ username  +  "不存在！");
         }
 
+        //添加角色
         Collection<SimpleGrantedAuthority> collection = new HashSet<SimpleGrantedAuthority>();
-
         collection.add(new SimpleGrantedAuthority(user.getRoles().getName()));
 
+        //用户认证
         return new org.springframework.security.core.userdetails.User(username,user.getPassword(),collection);
     }
 }

@@ -52,6 +52,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean isUserExist(UserEntity userEntity) {
-        return null;
+        UserEntity user = userDao.findUserEntityByAccount(userEntity.getAccount());
+        if (user != null){
+            return false;
+        }else {
+            return true;
+        }
     }
 }

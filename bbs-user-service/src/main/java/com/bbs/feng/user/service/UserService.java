@@ -48,5 +48,14 @@ public interface UserService extends BbsService {
     UserEntity findOneUserByAccount(String account);
 
 
+    /**
+     *    判断用户明是否重复
+     *
+     * @author Marce.Feng
+     * @date 2018/03/21 16:08
+     * @throws
+     * @param null
+     * @return
+     */
     Boolean isUserExist(UserEntity userEntity);
 }

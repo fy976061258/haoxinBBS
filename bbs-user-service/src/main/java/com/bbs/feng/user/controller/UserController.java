@@ -5,7 +5,6 @@ import com.bbs.feng.user.entity.UserEntity;
 import com.bbs.feng.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -25,7 +24,7 @@ public class UserController {
 
     @PostMapping(path = "/save")
     @ResponseBody
-    public ResultModel saveVideo(@RequestBody UserEntity user ,UriComponentsBuilder ucBuilder){
+    public ResultModel saveVideo(@RequestBody UserEntity user){
         if (userService.isUserExist(user)) {
             System.out.println("用户名 " + user.getName() + " 已存在");
             return ResultModel.error(100,HttpStatus.CONFLICT.getReasonPhrase());

@@ -15,6 +15,7 @@
 4.service类必须继承BbsService接口
 5.Dao层必须继承BbsDao接口
 6.Entity类必须继承EntityModel类
+7.需下载lombok插件,否则编译报错
 
 
 模块
@@ -25,4 +26,7 @@
 5.video:视频服务
 6.vue:前端
 7.zuul:网关 鉴权
+
+
+
 
