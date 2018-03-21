@@ -7,3 +7,22 @@
 3.会员体系
 4.视频在线播放
 
+
+具体规范
+1.页面调用zuul网关，通过网关认证转发至ribbon服务器。
+2.ribbon调用相关服务
+3.服务间调用使用Feign
+4.service类必须继承BbsService接口
+5.Dao层必须继承BbsDao接口
+6.Entity类必须继承EntityModel类
+
+
+模块
+1.coom:公共类
+2.eureka:注册中心
+3.ribbon:负载均衡客户端
+4.user:用户服务
+5.video:视频服务
+6.vue:前端
+7.zuul:网关 鉴权
+
