@@ -60,7 +60,8 @@ public class ActivationCodeServiceImpl implements ActivationCodeService {
     @Override
     public Integer is_true(String activationCode) {
         ActivationCodeEntity activationCodeEntity = activationCodeDao.findActivationCodeEntityByNumber(activationCode);
-        if (activationCodeEntity != null || activationCodeEntity.getNumber()!=null){
+        if (activationCodeEntity != null){
+            //判断是否使用
             if (activationCodeEntity.getIs_use()){
                 return 1;
             }

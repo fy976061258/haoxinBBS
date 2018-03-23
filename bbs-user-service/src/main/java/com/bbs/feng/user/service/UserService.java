@@ -58,4 +58,15 @@ public interface UserService extends BbsService {
      * @return
      */
     Boolean isUserExist(UserEntity userEntity);
+
+    /**
+     *    判断用户信息是否完整
+     *
+     * @author Marce.Feng
+     * @date 2018/03/23 10:04
+     * @throws
+     * @param userEntity 用户
+     * @return
+     */
+    String is_user(UserEntity userEntity);
 }

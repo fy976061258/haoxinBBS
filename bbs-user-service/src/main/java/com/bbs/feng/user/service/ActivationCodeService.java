@@ -43,7 +43,8 @@ public interface ActivationCodeService extends BbsService {
      * @date 2018/03/20 13:37
      * @throws
      * @param activationCode 激活码
-     * @return
+     * @return 0：激活码未使用
+     *         1：激活码已使用
      */
     Integer is_true(String activationCode);
 }

@@ -27,6 +27,8 @@ public class UserEntity extends EntityModel {
 
     private String password;
 
+    private String idCard;
+
     private String e_mail;
 
     private String phoneNumber;

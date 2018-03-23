@@ -59,4 +59,18 @@ public class UserServiceImpl implements UserService {
             return true;
         }
     }
+
+    @Override
+    public String is_user(UserEntity userEntity) {
+        if (userEntity.getAccount() == null){
+            return "账号不能为空";
+        }else if (userEntity.getName() == null){
+            return "昵称不能为空";
+        }else if (userEntity.getPassword() == null){
+            return "密码不能为空";
+        }else if (userEntity.getIdCard() == null){
+            return "身份证号码不能为空";
+        }
+        return "0";
+    }
 }
