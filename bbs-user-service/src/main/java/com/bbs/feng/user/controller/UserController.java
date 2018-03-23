@@ -33,7 +33,7 @@ public class UserController {
             }
             UserEntity users = userService.saveUser(user);
             if (users == null){
-                return ResultModel.error(201,"激活码不存在");
+                return ResultModel.error(201,"激活码不存在或已被使用");
             }
             return ResultModel.ok(users);
         }else {

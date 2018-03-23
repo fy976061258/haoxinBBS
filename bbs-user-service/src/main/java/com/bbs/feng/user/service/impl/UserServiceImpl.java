@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
         if (type == 0){
             String password = MD5Util.encode(userEntity.getPassword());
             userEntity.setPassword(password);
+            userEntity.setIs_disable(false);
             UserEntity user = userDao.save(userEntity);
             return user;
         }else {

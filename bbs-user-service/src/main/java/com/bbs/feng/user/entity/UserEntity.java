@@ -29,6 +29,8 @@ public class UserEntity extends EntityModel {
 
     private String idCard;
 
+    private Boolean is_disable;
+
     private String e_mail;
 
     private String phoneNumber;

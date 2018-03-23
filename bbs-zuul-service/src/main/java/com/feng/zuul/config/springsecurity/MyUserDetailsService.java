@@ -26,6 +26,8 @@ public class MyUserDetailsService implements UserDetailsService {
         UserEntity user = userService.findOneUserByAccount(username);
         if(user  == null){
             throw new UsernameNotFoundException("用户名："+ username  +  "不存在！");
+        }else if (user.getIs_disable() == true){
+            throw new UsernameNotFoundException("该用户已被禁用");
         }
 
         //添加角色
