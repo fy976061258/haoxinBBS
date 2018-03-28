@@ -21,7 +21,13 @@ public interface PaypalService extends BbsService {
      * @author Marce.Feng
      * @date 2018/03/28 11:30
      * @throws
-     * @param null
+     * @param total  金额
+     * @param currency  货币
+     * @param method  方法
+     * @param intent  描述
+     * @param description  描述
+     * @param cancelUrl  取消支付Url
+     * @param successUrl  支付成功Url
      * @return
      */
     Payment createPayment(
