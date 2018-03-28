@@ -60,10 +60,15 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-redis</artifactId>
-			<version>1.8.4.RELEASE</version>
+			<groupId>com.bbs.feng</groupId>
+			<artifactId>coom</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>org.springframework.data</groupId>-->
+		<!--<artifactId>spring-data-redis</artifactId>-->
+		<!--<version>1.8.4.RELEASE</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 	<dependencyManagement>

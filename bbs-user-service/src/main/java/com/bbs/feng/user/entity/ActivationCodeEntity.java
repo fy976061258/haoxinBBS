@@ -21,7 +21,15 @@ public class ActivationCodeEntity extends EntityModel {
 
     private String number;
 
+    //激活此注册码的Ip地址
+
+    private String theActivationIp;
+
+    //是否使用
+
     private Boolean is_use;
+
+    //是否售出
 
     private Boolean is_sell;
 

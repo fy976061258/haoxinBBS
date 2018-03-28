@@ -1,9 +1,6 @@
 package com.bbs.feng.coom.dao;
 
 
-import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.dao.BasicDAO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.io.Serializable;

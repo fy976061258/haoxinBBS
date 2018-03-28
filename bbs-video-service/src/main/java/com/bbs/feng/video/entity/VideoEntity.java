@@ -22,7 +22,7 @@ public class VideoEntity extends EntityModel {
 
 private String videoUrl;
 
-private String imgUrl;
+private String[] imgUrl;
 
 private String size;
 

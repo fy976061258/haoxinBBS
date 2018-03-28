@@ -23,11 +23,19 @@ public class UserEntity extends EntityModel {
 
     private String name;
 
+    //账号
+
     private String account;
+
+    //登录Ip
+
+    private String loginIp;
 
     private String password;
 
     private String idCard;
+
+    //是否禁用
 
     private Boolean is_disable;
 

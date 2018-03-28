@@ -1,14 +1,18 @@
 package com.bbs.feng.user.service.impl;
 
+import com.bbs.feng.coom.util.MD5Util;
 import com.bbs.feng.user.dao.ActivationCodeDao;
 import com.bbs.feng.user.entity.ActivationCodeEntity;
-import com.bbs.feng.user.entity.UserEntity;
 import com.bbs.feng.user.service.ActivationCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -26,8 +30,9 @@ public class ActivationCodeServiceImpl implements ActivationCodeService {
 
 
     @Override
-    public void generateActivationCode() {
-        for (int j = 0; j < 400 ; j++){
+    public List<ActivationCodeEntity> generateActivationCode(Integer size) {
+        List<ActivationCodeEntity> activationCodeEntities = new ArrayList<>();
+        for (int j = 0; j < size ; j++){
             ActivationCodeEntity activationCodeEntity = new ActivationCodeEntity();
             String val = "";
             Random random = new Random();
@@ -43,11 +48,15 @@ public class ActivationCodeServiceImpl implements ActivationCodeService {
                     val += String.valueOf(random.nextInt(10));
                 }
             }
-            activationCodeEntity.setNumber(val);
+            String md5Val = MD5Util.encode(val);
+            activationCodeEntity.setNumber(md5Val);
             activationCodeEntity.setIs_use(false);
             activationCodeEntity.setIs_sell(false);
-            activationCodeDao.save(activationCodeEntity);
+            ActivationCodeEntity activationCode = activationCodeDao.save(activationCodeEntity);
+            activationCode.setNumber(val);
+            activationCodeEntities.add(activationCode);
         }
+        return activationCodeEntities;
     }
 
     @Override
@@ -59,7 +68,9 @@ public class ActivationCodeServiceImpl implements ActivationCodeService {
 
     @Override
     public Integer is_true(String activationCode) {
-        ActivationCodeEntity activationCodeEntity = activationCodeDao.findActivationCodeEntityByNumber(activationCode);
+        String val = MD5Util.encode(activationCode);
+        ActivationCodeEntity activationCodeEntity =
+                activationCodeDao.findActivationCodeEntityByNumber(val);
         if (activationCodeEntity != null){
             //判断是否使用
             if (activationCodeEntity.getIs_use()){
@@ -68,5 +79,12 @@ public class ActivationCodeServiceImpl implements ActivationCodeService {
             return 0;
         }
         return null;
+    }
+
+    @Override
+    public Page<ActivationCodeEntity> findUnsoldActivationCode(Boolean is_sell,Boolean is_use,Integer page, Integer size) {
+        PageRequest pageRequest = new PageRequest(page,size);
+        Page<ActivationCodeEntity> activationCode = activationCodeDao.findAvailable(is_sell,is_use,pageRequest);
+        return activationCode;
     }
 }

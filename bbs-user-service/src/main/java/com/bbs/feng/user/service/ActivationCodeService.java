@@ -20,10 +20,10 @@ public interface ActivationCodeService extends BbsService {
      * @author Marce.Feng
      * @date 2018/03/19 17:22
      * @throws
-     * @param null
+     * @param size 生成条数
      * @return
      */
-    void generateActivationCode();
+    List<ActivationCodeEntity> generateActivationCode(Integer size);
 
     /**
      *    查询所有的激活码
@@ -47,4 +47,18 @@ public interface ActivationCodeService extends BbsService {
      *         1：激活码已使用
      */
     Integer is_true(String activationCode);
+
+    /**
+     *    查询未售出的激活码
+     *
+     * @author Marce.Feng
+     * @date 2018/03/26 17:41
+     * @throws
+     * @param is_sell 是否出售
+     * @param is_use 是否使用
+     * @param page 页数
+     * @param size 显示条数
+     * @return
+     */
+    Page<ActivationCodeEntity> findUnsoldActivationCode(Boolean is_sell,Boolean is_use,Integer page, Integer size);
 }

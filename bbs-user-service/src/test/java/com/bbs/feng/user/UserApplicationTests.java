@@ -46,8 +46,8 @@ public class UserApplicationTests {
 		userEntity.setName("管理员");
 		userEntity.setPassword("123456");
 		userEntity.setPhoneNumber("15900575334");
+		userEntity.setActivationCode("0AgoZr542Sq53GM0e1Q06f28mGVAl331Nj8u1B0f75xU7mB87l345G5034i8M83h1T");
 		userEntity.setRoles(role);
-
 		UserEntity userEntity1 = userService.saveUser(userEntity);
 		System.out.print(userEntity1);
 	}
@@ -60,7 +60,8 @@ public class UserApplicationTests {
 
     @Test
     public void aa(){
-        activationCodeService.generateActivationCode();
+        List<ActivationCodeEntity> activationCodeEntities = activationCodeService.generateActivationCode(1);
+		System.out.print(activationCodeEntities);
     }
 
     @Test
@@ -69,5 +70,10 @@ public class UserApplicationTests {
         List<ActivationCodeEntity> activationCodeEntities1 = activationCodeEntities.getContent();
         System.out.print(activationCodeEntities);
     }
+
+	@Test
+	public void ac(){
+		activationCodeService.findUnsoldActivationCode(false,false,0,10);
+	}
 
 }
