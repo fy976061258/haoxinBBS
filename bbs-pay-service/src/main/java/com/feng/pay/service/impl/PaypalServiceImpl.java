@@ -15,6 +15,7 @@ import com.paypal.api.payments.RedirectUrls;
 import com.paypal.api.payments.Transaction;
 import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.PayPalRESTException;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Marco.Feng
@@ -23,6 +24,7 @@ import com.paypal.base.rest.PayPalRESTException;
  * @date 2018/03/28 11:25
  * @since JDK 1.8
  */
+@Service
 public class PaypalServiceImpl implements PaypalService {
     @Autowired
     private APIContext apiContext;

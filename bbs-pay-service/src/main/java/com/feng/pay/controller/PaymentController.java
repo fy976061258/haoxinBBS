@@ -4,8 +4,6 @@ package com.feng.pay.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.bbs.feng.coom.result.ResultModel;
-import com.bbs.feng.coom.result.status.Result;
 import com.bbs.feng.coom.util.URLUtils;
 import com.feng.pay.config.PaypalPaymentIntent;
 import com.feng.pay.config.PaypalPaymentMethod;
@@ -21,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.paypal.api.payments.Links;
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
+import org.springframework.web.servlet.ModelAndView;
+
 /**
  * @author Marco.Feng
  * @title: haoxinBBS
@@ -40,8 +40,16 @@ public class PaymentController {
     @Autowired
     private PaypalService paypalService;
 
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("templates/index.html");
+        return mv;
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "pay")
-    public ResultModel pay(HttpServletRequest request){
+    public ModelAndView pay(HttpServletRequest request){
+        ModelAndView mv = new ModelAndView();
         String cancelUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_CANCEL_URL;
         String successUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_SUCCESS_URL;
         try {
@@ -53,33 +61,39 @@ public class PaymentController {
                     "payment description",
                     cancelUrl,
                     successUrl);
+            mv.setViewName("redirect:/");
             for(Links links : payment.getLinks()){
                 if(links.getRel().equals("approval_url")){
-                    return ResultModel.ok(links);
+                    mv.setViewName("redirect:"+links.getHref());
+                    return mv;
                 }
             }
         } catch (PayPalRESTException e) {
             log.error(e.getMessage());
         }
-        return ResultModel.ok(successUrl);
+        return mv;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = PAYPAL_CANCEL_URL)
-    public ResultModel cancelPay(){
-        return ResultModel.ok("200");
+    public ModelAndView cancelPay(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("templates/cancel.html");
+        return mv;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL)
-    public ResultModel successPay(@RequestParam("paymentId") String paymentId,
-                                  @RequestParam("PayerID") String payerId){
+    public ModelAndView successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId){
+        ModelAndView mv = new ModelAndView();
         try {
             Payment payment = paypalService.executePayment(paymentId, payerId);
             if(payment.getState().equals("approved")){
-                return ResultModel.ok("200");
+                mv.setViewName("templates/success.html");
+                return mv;
             }
         } catch (PayPalRESTException e) {
             log.error(e.getMessage());
         }
-        return ResultModel.ok("200");
+        mv.setViewName("redirect:/");
+        return mv;
     }
 }
