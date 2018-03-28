@@ -3,8 +3,11 @@ package com.feng.pay.service;
 import com.bbs.feng.coom.service.BbsService;
 import com.feng.pay.config.PaypalPaymentIntent;
 import com.feng.pay.config.PaypalPaymentMethod;
+import com.feng.pay.entity.PayForm;
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author Marco.Feng
@@ -23,21 +26,14 @@ public interface PaypalService extends BbsService {
      * @throws
      * @param total  金额
      * @param currency  货币
-     * @param method  方法
-     * @param intent  描述
+     * @param method  支付方式
+     * @param intent  付款意图
      * @param description  描述
      * @param cancelUrl  取消支付Url
      * @param successUrl  支付成功Url
      * @return
      */
-    Payment createPayment(
-            Double total,
-            String currency,
-            PaypalPaymentMethod method,
-            PaypalPaymentIntent intent,
-            String description,
-            String cancelUrl,
-            String successUrl) throws PayPalRESTException;
+    Payment createPayment(HttpServletRequest request, PayForm payFrom) throws PayPalRESTException;
 
 
     /**

@@ -30,22 +30,22 @@ public class PayApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		try {
-			Payment payment = paypalService.createPayment(
-					500.00,
-					"USD",
-					PaypalPaymentMethod.paypal,
-					PaypalPaymentIntent.sale,
-					"payment description",
-					PAYPAL_CANCEL_URL,
-					PAYPAL_SUCCESS_URL);
-			for(Links links : payment.getLinks()){
-				if(links.getRel().equals("approval_url")){
-				}
-			}
-		} catch (PayPalRESTException e) {
-			log.error(e.getMessage());
-		}
+//		try {
+//			Payment payment = paypalService.createPayment(
+//					500.00,
+//					"USD",
+//					PaypalPaymentMethod.paypal,
+//					PaypalPaymentIntent.sale,
+//					"payment description",
+//					PAYPAL_CANCEL_URL,
+//					PAYPAL_SUCCESS_URL);
+//			for(Links links : payment.getLinks()){
+//				if(links.getRel().equals("approval_url")){
+//				}
+//			}
+//		} catch (PayPalRESTException e) {
+//			log.error(e.getMessage());
+//		}
 	}
 
 }

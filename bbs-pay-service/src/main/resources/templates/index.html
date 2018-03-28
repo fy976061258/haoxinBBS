@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="/pay">
+<form method="post" action="/pay" Enctype = "application/json">
+    <input type="text" name="total" placeholder="金额"/>
+    <input type="text" name="currency" placeholder="货币"/>
+    <input type="text" name="description" placeholder="付款描述"/>
     <button type="submit"><img src="images/paypal.jpg" width="100px;" height="30px;"/></button>
 </form>
 </body>
