@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="phonecatApp">
+<html ng-app="indexApp">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="lib/angular/angular.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
+<body ng-controller="indexListCtrl">
 <ul>
     <li ng-repeat="phone in phones">
         <span>{{phone.name}}</span>
         <p>{{phone.snippet}}</p>
     </li>
 </ul>
+
+<button ng-click="login('html/user/login.html')">登录</button>
 </body>
 </html>

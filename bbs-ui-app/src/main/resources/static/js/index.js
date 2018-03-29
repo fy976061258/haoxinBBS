@@ -1,7 +1,7 @@
 
-var phonecatApp = angular.module('phonecatApp', []);
+var indexApp = angular.module('indexApp', []);
 
-phonecatApp.controller('PhoneListCtrl', function ($scope) {
+indexApp.controller('indexListCtrl',function ($scope) {
     $scope.phones = [
         {'name': 'Nexus S',
             'snippet': 'Fast just got faster with Nexus S.'},
@@ -10,4 +10,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
         {'name': 'MOTOROLA XOOM?',
             'snippet': 'The Next, Next Generation tablet.'}
     ];
+    $scope.login = function(path) {
+        window.location = path;
+    };
 });
