@@ -15,7 +15,6 @@
         <module>bbs-eureka</module>
         <module>bbs-ribbon</module>
         <module>bbs-coom</module>
-        <module>bbs-ui-app</module>
         <module>bbs-pay-service</module>
     </modules>
 
