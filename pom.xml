@@ -9,7 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
+        <module>bbs-bus-service</module>
+        <module>bbs-config-server</module>
         <module>bbs-user-service</module>
+        <module>bbs-order-service</module>
         <module>bbs-zuul-service</module>
         <module>bbs-video-service</module>
         <module>bbs-eureka</module>

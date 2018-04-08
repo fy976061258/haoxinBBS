@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bbs.feng.coom.util.URLUtils;
-import com.feng.pay.config.PaypalPaymentIntent;
-import com.feng.pay.config.PaypalPaymentMethod;
 import com.feng.pay.entity.PayForm;
 import com.feng.pay.service.PaypalService;
 import org.springframework.beans.factory.annotation.Autowired;

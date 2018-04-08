@@ -21,11 +21,14 @@
 模块
 1.coom:公共类
 2.eureka:注册中心
-3.ribbon:负载均衡客户端
+3.ribbon:负载均衡客户端,以及Hystrix熔断器
 4.user:用户服务
 5.video:视频服务
-6.vue:前端
+6.app:前端
 7.zuul:网关 鉴权
+8.order:订单系统
+9.config:配置中心
+10.bus:消息总栈,传播配置
 
 
 
