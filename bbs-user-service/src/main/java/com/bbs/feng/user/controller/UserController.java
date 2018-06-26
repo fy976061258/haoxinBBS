@@ -43,10 +43,9 @@ public class UserController {
 
 
     @GetMapping(path = "/find/one")
-    @ResponseBody
-    public ResultModel findOneUserByAccount(@RequestParam String accountNumber){
+    public UserEntity findOneUserByAccount(@RequestParam String accountNumber){
         UserEntity userEntity = userService.findOneUserByAccount(accountNumber);
-        return ResultModel.ok(userEntity);
+        return userEntity;
     }
 
 

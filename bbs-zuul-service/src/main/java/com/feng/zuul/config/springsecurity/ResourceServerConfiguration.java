@@ -29,8 +29,10 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 				.and().authorizeRequests()
 				.antMatchers("/user*/**").permitAll()
 				.antMatchers("/api-r/user/save").permitAll()
+				.antMatchers("/oauth/*").permitAll()
 				.antMatchers("/api-r/**").authenticated()
-				.and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
+				.and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler())
+		;
 	}
 
 }

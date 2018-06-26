@@ -1,4 +1,4 @@
-package com.feng.zuul.config.redis;
+package com.bbs.feng.coom.util;
 
 /**
  * @author Marco.Feng

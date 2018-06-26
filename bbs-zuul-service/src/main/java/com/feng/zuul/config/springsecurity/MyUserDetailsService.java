@@ -1,5 +1,8 @@
 package com.feng.zuul.config.springsecurity;
 
+import com.bbs.feng.coom.result.ResultModel;
+import com.bbs.feng.coom.util.GsonUtil;
+import com.bbs.feng.coom.util.MapClassUtil;
 import com.bbs.feng.user.entity.UserEntity;
 import com.feng.zuul.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 
 /**
  * @author Marco.Feng
@@ -24,6 +28,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = userService.findOneUserByAccount(username);
+//        ResultModel resultModel = GsonUtil.fromJson(json,ResultModel.class);
+
+//        Map<String,Object> map = (Map<String, Object>) object;
+//        UserEntity user = GsonUtil.fromJson(GsonUtil.objfromBeen(resultModel.getBody()));
         if(user  == null){
             throw new UsernameNotFoundException("用户名："+ username  +  "不存在！");
         }else if (user.getIs_disable() == true){

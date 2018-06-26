@@ -58,6 +58,11 @@
             <artifactId>jersey-server</artifactId>
             <version>1.19.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.bbs.feng</groupId>
+            <artifactId>coom</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 

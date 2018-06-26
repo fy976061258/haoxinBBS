@@ -52,6 +52,11 @@
             <artifactId>coom</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.bbs.feng</groupId>
+            <artifactId>coom</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 	<dependencyManagement>

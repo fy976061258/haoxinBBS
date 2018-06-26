@@ -12,9 +12,11 @@
     "axios": "^0.15.3",
     "echarts": "^3.4.0",
     "nprogress": "^0.2.0",
+    "videojs-contrib-hls": "^5.14.1",
     "vue": "^2.2.2",
     "vue-clipboard2": "0.0.6",
     "vue-router": "^2.3.0",
+    "vue-video-player": "^5.0.2",
     "vuex": "^2.2.1"
   },
   "devDependencies": {

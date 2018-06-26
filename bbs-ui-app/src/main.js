@@ -8,7 +8,12 @@ import routes from './routes'
 import Mock from './mock'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
+import 'video.js/dist/video-js.css'
+import 'vue-video-player/src/custom-theme.css'
+import VideoPlayer from 'vue-video-player'
 import VueClipboard from 'vue-clipboard2'
+import 'videojs-contrib-hls'
+
 
 Mock.bootstrap();
 
@@ -16,6 +21,7 @@ Vue.use(VueClipboard);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(iview);
+Vue.use(VideoPlayer);
 
 const router = new VueRouter({
     routes
@@ -31,7 +37,7 @@ router.beforeEach((to, from, next) => {
     } else {
         next()
     }
-})
+});
 
 //router.afterEach(transition => {
 //NProgress.done();

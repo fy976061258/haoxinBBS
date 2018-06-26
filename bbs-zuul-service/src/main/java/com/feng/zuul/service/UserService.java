@@ -1,5 +1,6 @@
 package com.feng.zuul.service;
 
+import com.bbs.feng.coom.result.ResultModel;
 import com.bbs.feng.user.entity.UserEntity;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
