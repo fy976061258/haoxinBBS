@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bbs-order-service/bbs-order-service.iml" filepath="$PROJECT_DIR$/bbs-order-service/bbs-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-user-service/bbs-user-service.iml" filepath="$PROJECT_DIR$/bbs-user-service/bbs-user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-video-service/bbs-video-service.iml" filepath="$PROJECT_DIR$/bbs-video-service/bbs-video-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-zuul-service/bbs-zuul-service.iml" filepath="$PROJECT_DIR$/bbs-zuul-service/bbs-zuul-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-bus-service/client.iml" filepath="$PROJECT_DIR$/bbs-bus-service/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-config-server/config.iml" filepath="$PROJECT_DIR$/bbs-config-server/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-coom/coom.iml" filepath="$PROJECT_DIR$/bbs-coom/coom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-eureka/eureka.iml" filepath="$PROJECT_DIR$/bbs-eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/haoxinBBS.iml" filepath="$PROJECT_DIR$/.idea/haoxinBBS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-pay-service/pay.iml" filepath="$PROJECT_DIR$/bbs-pay-service/pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-ribbon/ribbon.iml" filepath="$PROJECT_DIR$/bbs-ribbon/ribbon.iml" />
+    </modules>
+  </component>
+</project>

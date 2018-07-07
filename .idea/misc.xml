@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="JSX" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-zuul-service/pom.xml" />
+        <option value="$PROJECT_DIR$/bb-pay-service/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-vue-app/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-config-client-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

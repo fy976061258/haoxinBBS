@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app" />
+        <module name="bb-pay-service" />
+        <module name="bbs-bus-service" />
+        <module name="bbs-config-client-service" />
+        <module name="bbs-config-server" />
+        <module name="bbs-coom" />
+        <module name="bbs-eureka" />
+        <module name="bbs-order-service" />
+        <module name="bbs-pay-service" />
+        <module name="bbs-ribbon" />
+        <module name="bbs-user-service" />
+        <module name="bbs-video-service" />
+        <module name="bbs-vue-app" />
+        <module name="bbs-zuul-service" />
+        <module name="client" />
+        <module name="config" />
+        <module name="coom" />
+        <module name="demo" />
+        <module name="eureka" />
+        <module name="haoxinBBS" />
+        <module name="pay" />
+        <module name="ribbon" />
+        <module name="user" />
+        <module name="video" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app" target="1.8" />
+      <module name="bb-pay-service" target="1.8" />
+      <module name="bbs-bus-service" target="1.8" />
+      <module name="bbs-config-client-service" target="1.8" />
+      <module name="bbs-config-server" target="1.8" />
+      <module name="bbs-coom" target="1.8" />
+      <module name="bbs-eureka" target="1.8" />
+      <module name="bbs-oauth" target="1.8" />
+      <module name="bbs-oauth-service" target="1.8" />
+      <module name="bbs-order-service" target="1.8" />
+      <module name="bbs-pay-service" target="1.8" />
+      <module name="bbs-ribbon" target="1.8" />
+      <module name="bbs-user-service" target="1.8" />
+      <module name="bbs-video-service" target="1.8" />
+      <module name="bbs-vue-app" target="1.8" />
+      <module name="bbs-vue-js" target="1.8" />
+      <module name="bbs-zuul-service" target="1.8" />
+      <module name="client" target="1.8" />
+      <module name="config" target="1.8" />
+      <module name="coom" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="haoxinBBS" target="1.5" />
+      <module name="pay" target="1.8" />
+      <module name="ribbon" target="1.8" />
+      <module name="user" target="1.8" />
+      <module name="video" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
